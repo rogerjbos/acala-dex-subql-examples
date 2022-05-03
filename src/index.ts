@@ -1,10 +1,10 @@
 import { request, gql } from 'graphql-request'
 
-function toFloat(x) {
+const toFloat = (x) => {
   return Number(x) / 1e18;
 }
 
-function fixToken(x)  {
+const fixToken = (x) => {
   var y = x.replace('fa://0', 'RMRK')
             .replace('fa%3A%2F%2F0', 'RMRK')
             .replace('fa://1', 'ARIS')
@@ -25,7 +25,7 @@ function fixToken(x)  {
 }
 
 // Helper to sort JSON object based on 'prop'
-function GetSortOrder(prop) {
+const GetSortOrder = (prop) => {
   return function(a, b) {
       if (a[prop] > b[prop]) {
           return -1;
