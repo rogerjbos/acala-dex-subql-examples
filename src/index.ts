@@ -1,8 +1,6 @@
 import { request, gql } from 'graphql-request'
 
-const toFloat = (x) => {
-  return Number(x) / 1e18;
-}
+const toFloat = (x) => Number(x) / 1e18;
 
 const fixToken = (x) => {
   var y = x.replace('fa://0', 'RMRK')
@@ -37,7 +35,7 @@ const GetSortOrder = (prop) => {
 }
 
 
-async function main() {
+const main = async () => {
 
   const networkName: string = "Karura";
   var api_dex;
@@ -102,6 +100,14 @@ async function main() {
     ({id, tradeVolumeUSD, tvl, Cum_TVL: cumsum += tvl }));
   console.log("cum_dex_TVL: " + JSON.stringify(cum_dex_TVL));
 
+
+  const creature = {
+    genus: 'Callithrix',
+    species: 'Jacchus'
+  }
+  const {genus, species} = creature
+  console.log(`genus is ${genus}`)
+  console.log(`species is ${species}`)
 
 }
 main()
